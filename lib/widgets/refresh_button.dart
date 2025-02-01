@@ -10,7 +10,11 @@ class RefreshButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.read(webViewControllerProvider);
     return IconButton(
-      icon: const Icon(Icons.refresh),
+      icon: const Icon(
+        Icons.refresh,
+        color: Colors.white,
+        size: 20,
+      ),
       onPressed: () {
         controller.reload();
         ref.refresh(uiCustomizationProvider); // カスタマイズを再適用

@@ -12,6 +12,7 @@ void main() {
   );
 }
 
+// テーマを当てる
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -34,14 +35,21 @@ class Xclusive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Xclusive'),
-        // actions: const [RefreshButton()],
+      backgroundColor: Colors.black,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(30.0),
+        child: AppBar(
+          backgroundColor: Colors.black,
+          // title: const Text('Xclusive', style: TextStyle(color: Colors.white)),
+          title: const RefreshButton(),
+          // leading: const RefreshButton(),
+        ),
       ),
-      // body: const WebViewWithCustomization(),
-      body: InAppWebView(
-        initialUrlRequest: URLRequest(url: WebUri('https://flutter.dev')),
-      ),
+      body: SafeArea(child: WebViewWithCustomization()),
+      // body: InAppWebView(
+      //   initialUrlRequest: URLRequest(url: WebUri('https://flutter.dev')),
+      // ),
     );
+    // return WebViewWithCustomization();
   }
 }

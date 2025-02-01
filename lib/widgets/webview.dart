@@ -10,12 +10,12 @@ class WebViewWithCustomization extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final controller = ref.watch(webViewControllerProvider);
-    // ref.watch(uiCustomizationProvider); // UIカスタマイズをトリガー
+    final controller = ref.watch(webViewControllerProvider);
+    ref.watch(uiCustomizationProvider);
 
-    final controller = WebViewController()
-      ..loadRequest(Uri.parse('https://flutter.dev'))
-      ..setJavaScriptMode(JavaScriptMode.unrestricted);
+    // final controller = WebViewController()
+    //   ..loadRequest(Uri.parse('https://flutter.dev'))
+    //   ..setJavaScriptMode(JavaScriptMode.unrestricted);
     // ..setBackgroundColor(Colors.black);
 
     return WebViewWidget(controller: controller);
